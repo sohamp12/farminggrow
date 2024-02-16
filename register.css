@@ -1,0 +1,78 @@
+.loginform form {
+    width: 50%;
+    height: 50%;
+     margin: 0 auto;
+     background-color: transparent;
+     padding-top: 10%;
+     padding-left: 3%;
+     text-align: center;
+     border: 2px solid rgba(255, 255, 255, .2);
+     backdrop-filter: blur(5px);
+     align-items: center;
+     border-radius: 20px;
+ }
+ .ok{
+     margin-top: -8%;
+     margin-left: -2%;
+ }
+ .loginform h2{
+     padding-bottom: 4.5%;
+     font-size: 28px;
+     color: white;
+     text-transform: capitalize;
+ }
+ 
+ .loginform .box
+ {
+     border: 1px;
+     padding: 10px;
+     color: black;
+     margin: 10px;
+     width: 50%;
+     height: 1%;
+     font-size: 14px;
+     border-radius: 10px;
+ }
+  .loginbtn
+ {
+     
+     margin-bottom: 5%;
+     margin-top: 2.5%;
+ }
+ .loginform p{
+     font-size: 15px;
+     margin-top: 1.5%;
+     padding: 0%;
+     color: white;
+ }
+ .loginform p a{
+     color: white;
+ }
+ .loginform p a:hover{
+     content: '';
+     width: 0%;
+     height: 2px; 
+     color: red;
+     margin: auto;
+     transition: width 0.5s;
+ }
+ .loginform p a:hover::after {
+    width: 100%;
+ }
+ input[type=text]{
+     border: 2px solid red;
+     border-radius: 4%;
+ }
+ .dob{
+    color: white;
+   padding: 0%;
+   margin-left: -6.5%;
+ }
+ .op
+ {
+    padding: 0%;
+    margin-left: -9.5%;
+    color: white;
+ }
+ 
+ 

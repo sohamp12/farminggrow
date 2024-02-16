@@ -1,0 +1,60 @@
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@400;500;600&family=Roboto:wght@300;500&display=swap');
+  
+
+  .catmenu {
+    margin-top: 5.5%;
+    background-color: #ff7800; /* Primary color for the navigation bar */
+    padding: 10px; /* Add some padding for better appearance */
+    text-align: center;
+  }
+  
+  .catmenu ul {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  
+  .catmenu li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 20px; /* Add some space between list items */
+  }
+  
+  .catmenu a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* Text color */
+    font-weight: bold; /* Make text bold */
+    font-size: 16px; /* Set font size */
+    transition: color 0.3s ease; /* Add smooth color transition */
+  }
+  
+  .catmenu a:hover {
+    color: #3e3434; /* Change text color on hover to a lighter shade of orange */
+  }
+  
+  @keyframes firecracker {
+    0% { transform: translateY(0) rotate(0); }
+    25% { transform: translateY(-20px) rotate(45deg); }
+    50% { transform: translateY(0) rotate(0); }
+    75% { transform: translateY(-20px) rotate(-45deg); }
+    100% { transform: translateY(0) rotate(0); }
+  }
+
+  .firecracker {
+    display: inline-block;
+    font-size: 24px;
+    animation: firecracker 1s infinite;
+  }
+  @keyframes spark {
+    0% { opacity: 0; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(30px); }
+  }
+
+  .spark {
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background-color: #ffcc00;
+    animation: spark 0.5s ease-out infinite;
+    bottom: 0; /* Position the spark at the bottom */
+  }

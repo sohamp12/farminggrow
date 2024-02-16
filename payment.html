@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h2>Product Payment</h2>
+    <form id="paymentForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="price">Price per Unit:</label>
+        <input type="number" id="price" step="0.01" required>
+
+        <button type="button" onclick="calculateTotal()">Add Product</button>
+    </form>
+
+    <div id="output">
+        <h3>Bill Summary</h3>
+        <ul id="billSummary"></ul>
+        <p>Total Amount: $<span id="totalAmount">0.00</span></p>
+    </div>
+</div>
+
+<script>
+    function calculateTotal() {
+        const productName = document.getElementById('productName').value;
+        const quantity = parseFloat(document.getElementById('quantity').value);
+        const price = parseFloat(document.getElementById('price').value);
+
+        const totalAmount = quantity * price;
+
+        const billSummary = document.getElementById('billSummary');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${productName} x ${quantity} = $${totalAmount.toFixed(2)}`;
+        billSummary.appendChild(listItem);
+
+        updateTotalAmount();
+    }
+
+    function updateTotalAmount() {
+        const totalAmountElement = document.getElementById('totalAmount');
+        const billSummary = document.getElementById('billSummary');
+        const totalAmount = Array.from(billSummary.children).reduce((total, listItem) => {
+            const amount = parseFloat(listItem.textContent.split('= $')[1]);
+            return total + amount;
+        }, 0);
+
+        totalAmountElement.textContent = totalAmount.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
